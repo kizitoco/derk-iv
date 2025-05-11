@@ -1,0 +1,221 @@
+/**
+ * Google Apps Script for Form Submissions
+ * Saves form data to Google Sheets with proper error handling
+ */
+
+// Configuration
+const CONFIG = {
+  SHEET_NAME: "FormSubmissions",
+  HEADERS: ["Timestamp", "Name", "Email", "Phone", "Service", "Message"],
+  LOCK_TIMEOUT: 30000, // 30 seconds
+  MAX_ROWS: 1000 // Prevent sheet from growing indefinitely
+};
+
+/**
+ * Main function to handle POST requests
+ */
+function doPost(e) {
+  let lock;
+  let result;
+  
+  try {
+    // Acquire script lock to prevent concurrent writes
+    lock = LockService.getScriptLock();
+    lock.waitLock(CONFIG.LOCK_TIMEOUT);
+    
+    // Get the spreadsheet and sheet
+    const { sheet } = getOrCreateSpreadsheet();
+    
+    // Parse and validate the incoming data
+    const formData = parseFormData(e.postData.contents);
+    
+    // Prepare the new row data
+    const newRow = prepareRowData(formData);
+    
+    // Append the data to the sheet
+    appendDataToSheet(sheet, newRow);
+    
+    // Clean up old data if needed
+    maintainSheetSize(sheet);
+    
+    // Return success response
+    result = {
+      status: "success",
+      message: "Form submitted successfully",
+      timestamp: new Date().toISOString()
+    };
+    
+    return createResponse(result);
+    
+  } catch (error) {
+    // Return error response
+    result = {
+      status: "error",
+      message: error.message,
+      timestamp: new Date().toISOString()
+    };
+    
+    return createResponse(result, 400);
+    
+  } finally {
+    // Release the lock if it was acquired
+    if (lock && lock.hasLock()) {
+      lock.releaseLock();
+    }
+  }
+}
+
+/**
+ * Create a CORS-compatible HTTP response
+ */
+function createResponse(data, statusCode = 200) {
+  const output = ContentService.createTextOutput(JSON.stringify(data));
+  output.setMimeType(ContentService.MimeType.JSON);
+  
+  // For CORS support, we need to return these headers
+  // Note: In Google Apps Script, we can't directly set headers in the response
+  // The frontend will need to handle CORS differently
+  
+  return output;
+}
+
+/**
+ * Helper function to get or create the spreadsheet and sheet
+ */
+function getOrCreateSpreadsheet() {
+  try {
+    // Try to get active spreadsheet first
+    let spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    
+    // If no active spreadsheet, create a new one
+    if (!spreadsheet) {
+      spreadsheet = SpreadsheetApp.create("Form Submissions - " + new Date().toISOString());
+    }
+    
+    // Get or create the sheet
+    let sheet = spreadsheet.getSheetByName(CONFIG.SHEET_NAME);
+    if (!sheet) {
+      sheet = spreadsheet.insertSheet(CONFIG.SHEET_NAME);
+      sheet.appendRow(CONFIG.HEADERS);
+    }
+    
+    return { spreadsheet, sheet };
+    
+  } catch (error) {
+    throw new Error(`Failed to access spreadsheet: ${error.message}`);
+  }
+}
+
+/**
+ * Parse and validate form data
+ */
+function parseFormData(postData) {
+  try {
+    const data = JSON.parse(postData);
+    
+    // Validate required fields
+    if (!data.name || !data.email) {
+      throw new Error("Name and email are required fields");
+    }
+    
+    // Sanitize inputs
+    return {
+      name: data.name.toString().trim(),
+      email: data.email.toString().trim(),
+      phone: (data.phone || "").toString().trim(),
+      service: (data.service || "").toString().trim(),
+      message: (data.message || "").toString().trim()
+    };
+    
+  } catch (error) {
+    throw new Error(`Invalid form data: ${error.message}`);
+  }
+}
+
+/**
+ * Prepare row data for the sheet
+ */
+function prepareRowData(formData) {
+  return [
+    new Date(), // Timestamp
+    formData.name,
+    formData.email,
+    formData.phone,
+    formData.service,
+    formData.message
+  ];
+}
+
+/**
+ * Append data to the sheet with validation
+ */
+function appendDataToSheet(sheet, rowData) {
+  try {
+    // Validate the row data matches headers
+    if (rowData.length !== CONFIG.HEADERS.length) {
+      throw new Error("Data format doesn't match sheet headers");
+    }
+    
+    // Append the new row
+    sheet.appendRow(rowData);
+    
+  } catch (error) {
+    throw new Error(`Failed to write to sheet: ${error.message}`);
+  }
+}
+
+/**
+ * Maintain sheet size by removing old rows if needed
+ */
+function maintainSheetSize(sheet) {
+  const lastRow = sheet.getLastRow();
+  if (lastRow > CONFIG.MAX_ROWS) {
+    const rowsToDelete = lastRow - CONFIG.MAX_ROWS;
+    sheet.deleteRows(2, rowsToDelete); // Keep header row
+  }
+}
+
+/**
+ * Setup function to initialize the spreadsheet
+ */
+function setup() {
+  try {
+    const { spreadsheet } = getOrCreateSpreadsheet();
+    
+    return {
+      status: "success",
+      message: "Spreadsheet initialized successfully",
+      spreadsheetUrl: spreadsheet.getUrl(),
+      sheetName: CONFIG.SHEET_NAME
+    };
+    
+  } catch (error) {
+    return {
+      status: "error",
+      message: `Setup failed: ${error.message}`
+    };
+  }
+}
+
+/**
+ * Test function to verify the script works
+ */
+function testSubmission() {
+  const testData = {
+    name: "Test User",
+    email: "test@example.com",
+    phone: "123-456-7890",
+    service: "Testing",
+    message: "This is a test submission"
+  };
+  
+  const options = {
+    method: "post",
+    payload: JSON.stringify(testData),
+    contentType: "application/json",
+    muteHttpExceptions: true
+  };
+  
+  const response = UrlFetchApp.fetch(ScriptApp.getService().getUrl(), options);
+  Logger.log(response.getContentText());
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derki Store</title>
+    <meta name="description" content="High-quality design assets to boost your creative projects. Download premium templates, social media kits, and more.">
+    <link rel="icon" type="image/x-icon" href="logo_Icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+     <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo_name.png" alt="Derki Visuals Logo" width="200" height="60">
+                </a> 
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="store.html" class="cta-button">Our Store</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html" class="cta-button">Our Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Products -->
+    <section class="products">
+        <div class="container">
+            <h2>Design <span>Resources</span></h2>
+            <p class="section-description">High-quality design assets to boost your creative projects</p>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="home image.jpg" alt="Logo Templates Pack" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <h3>Logo Templates Pack</h3>
+                        <p class="product-description">50 editable logo templates in PSD and AI formats</p>
+                        <div class="product-price">₦5,000</div>
+                        <button class="cta-button buy-btn" data-id="1" data-price="5000" data-name="Logo Templates Pack">Buy Now</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Backdrop.png" alt="Social Media Kit" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <h3>Social Media Kit</h3>
+                        <p class="product-description">200+ templates for Instagram, Facebook, and Twitter</p>
+                        <div class="product-price">₦7,500</div>
+                        <button class="cta-button buy-btn" data-id="2" data-price="7500" data-name="Social Media Kit">Buy Now</button>
+                    </div>
+                </div>
+
+                 <div class="product-card">
+                    <div class="product-image">
+                        <img src="home image.jpg" alt="Logo Templates Pack" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <h3>Logo Templates Pack</h3>
+                        <p class="product-description">50 editable logo templates in PSD and AI formats</p>
+                        <div class="product-price">₦5,000</div>
+                        <button class="cta-button buy-btn" data-id="1" data-price="5000" data-name="Logo Templates Pack">Buy Now</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Backdrop.png" alt="Social Media Kit" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <h3>Social Media Kit</h3>
+                        <p class="product-description">200+ templates for Instagram, Facebook, and Twitter</p>
+                        <div class="product-price">₦7,500</div>
+                        <button class="cta-button buy-btn" data-id="2" data-price="7500" data-name="Social Media Kit">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html"><span class="derki">Derki</span> <span class="visuals">Visuals</span></a>
+                    <p>Creating visual identities that inspire and engage.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#process">Process</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="index.html#services">Brand Identity</a></li>
+                        <li><a href="index.html#services">Print Design</a></li>
+                        <li><a href="index.html#services">Digital Design</a></li>
+                        <li><a href="index.html#services">3D & Motion</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for design tips and special offers.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Derki Visuals. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Payment handling
+            const buyButtons = document.querySelectorAll('.buy-btn');
+            
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-id');
+                    const productPrice = this.getAttribute('data-price');
+                    const productName = this.getAttribute('data-name');
+                    
+                    // In a real implementation, you would integrate with Paystack here
+                    // This is just a demo alert
+                    alert(`In a real implementation, this would redirect to Paystack payment for ${productName} (₦${productPrice})`);
+                    
+                    // After successful payment, you would show the success modal
+                    // document.getElementById('successModal').style.display = 'block';
+                });
+            });
+            
+            // Close modal
+            document.querySelector('.close-success').addEventListener('click', function() {
+                document.getElementById('successModal').style.display = 'none';
+            });
+            
+            // Mobile menu toggle (from main script.js)
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-times');
+                this.querySelector('i').classList.toggle('fa-bars');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+            
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                backToTopBtn.classList.toggle('active', window.scrollY > 300);
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derki Visuals</title>
+    <meta name="description" content="Professional brand and graphic design services that make your business stand out. Logo design, branding, print and digital design solutions.">
+    <link rel="icon" type="image/x-icon" href="logo_Icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo_name.png" alt="Derki Visuals Logo" width="200" height="60">
+                </a> 
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="store.html" class="cta-button">Our Store</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="store.html" class="cta-button">Our Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevate Your Brand with <span>Stunning Visuals</span></h1>
+                <p>Professional brand and graphic design services that make your business stand out.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                    <a href="#portfolio" class="secondary-button">View Portfolio</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="home image.jpg" alt="Design workspace with computer and design tools">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our <span>Services</span></h2>
+            <p class="section-description">We offer comprehensive design solutions tailored to your brand's needs.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h3>Brand Identity</h3>
+                    <p>Logo design, color palette, typography, and brand guidelines to establish your visual identity.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Print Design</h3>
+                    <p>Business cards, flyers, brochures, packaging, and other printed materials.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Digital Design</h3>
+                    <p>Social media graphics, web banners, email templates, and digital advertisements.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D & Motion</h3>
+                    <p>3D product renders, motion graphics, and animated logos for modern brands.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Our <span>Portfolio</span></h2>
+            <p class="section-description">Explore our recent work and see how we've helped businesses like yours.</p>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="print">Print</button>
+                <button class="filter-btn" data-filter="digital">Digital</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="branding">
+                    <img src="derki_visuals_logo.jpg" alt="Derki Visuals Brand Identity Project">
+                    <div class="portfolio-overlay">
+                        <h3>Derki Visuals</h3>
+                        <p>Complete brand identity</p>
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="print">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Organic Farm Product Packaging Design">
+                    <div class="portfolio-overlay">
+                        <h3>Organic Farm</h3>
+                        <p>Product packaging</p>
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="digital">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Tech Startup Social Media Campaign">
+                    <div class="portfolio-overlay">
+                        <h3>Tech Startup</h3>
+                        <p>Social media campaign</p>
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="branding">
+                    <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Luxe Apparel Brand Identity">
+                    <div class="portfolio-overlay">
+                        <h3>Luxe Apparel</h3>
+                        <p>Logo & visual identity</p>
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="print">
+                    <img src="finiancial.png" alt="Financial Firm Corporate Stationery">
+                    <div class="portfolio-overlay">
+                        <h3>Financial Firm</h3>
+                        <p>Corporate stationery</p>
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="digital">
+                    <img src="fitness_image.jpg" alt="Fitness App Website Graphics">
+                    <div class="portfolio-overlay">
+                        <h3>Fitness App</h3>
+                        <p>Website graphics</p>
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-cta">
+                <p>Ready to create something amazing together?</p>
+                <a href="portfolio.html" class="cta-button">See More of Our Designs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2>Our <span>Process</span></h2>
+            <p class="section-description">A streamlined approach to delivering exceptional design results.</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We discuss your vision, goals, and requirements to understand your needs.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Concept</h3>
+                    <p>We create initial design concepts and present them for your feedback.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Refinement</h3>
+                    <p>We refine the chosen concept based on your input and suggestions.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>We deliver final files in all required formats with full ownership rights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What <span>Clients Say</span></h2>
+            <p class="section-description">Don't just take our word for it - hear from our satisfied clients.</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"Derki Visuals transformed our brand identity completely. Their attention to detail and creative approach exceeded our expectations. We've received countless compliments on our new look!"</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson photo">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO, Nova Coffee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Working with Derki was a game-changer for our startup. They understood our vision and created designs that perfectly represent our tech-forward approach. Highly recommended!"</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen photo">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Founder, TechStart</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The packaging design Derki created for our organic products helped us stand out on crowded shelves. Sales increased by 30% after the redesign. Worth every penny!"</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez photo">
+                            <div>
+                                <h4>Emily Rodriguez</h4>
+                                <p>Marketing Director, GreenEarth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About <span>Derki Visuals</span></h2>
+                <p>Derki Visuals is a passionate graphic design agency specializing in creating impactful visual identities for brands across various industries.</p>
+                <p>Founded with the vision of helping businesses communicate their unique stories through design, we combine creativity with strategy to deliver designs that not only look great but also drive results.</p>
+                <p>Our approach is collaborative, transparent, and focused on understanding your business needs to create designs that truly represent your brand's personality and values.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>150+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>95%</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+                    <div class="stat">
+                        <h3>8+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Designer working on computer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in <span>Touch</span></h2>
+            <p class="section-description">Ready to start your project or have questions? We'd love to hear from you.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p>derkivisuals@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Visit Us</h3>
+                            <p>Imo Core, Orji, Owerri North LGA, Imo State Nigeria</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/derkivisuals" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/derkivisuals/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@derkivisuals" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@derkivisuals?lang=en" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/message/T2DB4UZTWT5SK1" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+<br>
+                    <div class="info-item">
+                        <a href="https://forms.gle/ZAvKAg1BLKKX9jrT6" class="cta-button" style="width: 100dvw; display: block; margin: 0 auto;"><h1>Request Design</h1></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html"><span class="derki">Derki</span> <span class="visuals">Visuals</span></a>
+                    <p>Creating visual identities that inspire and engage.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Brand Identity</a></li>
+                        <li><a href="#services">Print Design</a></li>
+                        <li><a href="#services">Digital Design</a></li>
+                        <li><a href="#services">3D & Motion</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for design tips and special offers.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Derki Visuals. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2>Project Details</h2>
+                <div class="modal-project-content">
+                    <!-- Content will be loaded via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Thank You!</h2>
+                <p>Your request has been submitted successfully. We'll get back to you within 24 hours.</p>
+                <button class="cta-button close-success">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
